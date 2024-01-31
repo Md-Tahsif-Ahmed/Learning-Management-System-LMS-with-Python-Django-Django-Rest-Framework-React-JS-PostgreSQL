@@ -10,10 +10,7 @@ def home(request):
     return render(request, 'hello')
 
 class TeacherList(generics.ListCreateAPIView):
-    # def get(self, request):
-    #     teacher= models.Teacher.objects.all()
-    #     serializer = TeacherSerializer(teacher, many=True)
-    #     return response(serializer.data)
+   
     queryset=models.Teacher.objects.all()
     serializer_class=TeacherSerializer
     # permission_classes=[permissions.IsAuthenticated]
@@ -26,3 +23,7 @@ class TeacherDetail(generics.RetrieveUpdateDestroyAPIView):
     # permission_classes=[permissions.IsAuthenticated]
  
 
+ # def get(self, request):
+    #     teacher= models.Teacher.objects.all()
+    #     serializer = TeacherSerializer(teacher, many=True)
+    #     return response(serializer.data)
